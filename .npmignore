@@ -1,0 +1,37 @@
+# /home/orenda/OfficeFiles/OpenSource/capacitor-mlkit-doc-scanner-plugin/.npmignore
+# Source files (already compiled)
+src/
+
+# Node modules
+node_modules/
+
+# Build artifacts not meant for publishing (if any, beyond 'dist')
+# e.g., if you have a separate example app build
+# example/www/
+
+# Test files
+*.spec.ts
+*.test.ts
+tests/
+__tests__/
+
+# Config files not needed in the package
+tsconfig.json
+rollup.config.js
+*.config.js 
+.eslint*
+.prettier*
+.editorconfig
+.swcrc
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+*.log
+
+# Git files
+.git/
+.gitignore
+.github/
+
