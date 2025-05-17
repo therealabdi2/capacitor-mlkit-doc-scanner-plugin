@@ -26,7 +26,7 @@ npx cap sync
 ## Supported Platforms
 
 - [x] Android
-- [x] iOS (Not available)
+- [ ] iOS (Not available)
 - [ ] Web (Not available - native feature)
 
 ## API
@@ -60,12 +60,12 @@ Starts the document scanning process.
 
 **ScanOptions Interface:**
 
-| Name                   | Type                                     | Description                                                                                                                                                                 | Default      |
-| :--------------------- | :--------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- |
-| `galleryImportAllowed` | `boolean`                                | Whether to allow importing from the photo gallery.                                                                                                                          | `false`      |
-| `pageLimit`            | `number`                                 | The maximum number of pages that can be scanned.                                                                                                                            | `10`         |
-| `resultFormats`        | `'JPEG' \| 'PDF' \| 'JPEG_PDF'`          | The desired result formats.                                                                                                                                                 | `'JPEG_PDF'` |
-| `scannerMode`          | `'FULL' \| 'BASE' \| 'BASE_WITH_FILTER'` | The scanner mode. 'FULL': Enables auto-capture and file format selection. 'BASE': Disables auto-capture. 'BASE_WITH_FILTER': Enables import from gallery, otherwise 'BASE'. | `'FULL'`     |
+| Name                   | Type                                     | Description                                                                                                                                                                                                                                                                                                                                                    | Default      |
+| :--------------------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- |
+| `galleryImportAllowed` | `boolean`                                | Whether to allow importing from the photo gallery.                                                                                                                                                                                                                                                                                                             | `false`      |
+| `pageLimit`            | `number`                                 | The maximum number of pages that can be scanned.                                                                                                                                                                                                                                                                                                               | `10`         |
+| `resultFormats`        | `'JPEG' \| 'PDF' \| 'JPEG_PDF'`          | The desired result formats.                                                                                                                                                                                                                                                                                                                                    | `'JPEG_PDF'` |
+| `scannerMode`          | `'FULL' \| 'BASE' \| 'BASE_WITH_FILTER'` | The scanner mode. <br/>'FULL': Enables auto-capture and file format selection (if multiple formats are specified in `resultFormats`). <br/>'BASE': Disables auto-capture and file format selection. The user always needs to tap the capture button. <br/>'BASE_WITH_FILTER': Enables import from the photo gallery, but otherwise behaves the same as 'BASE'. | `'FULL'`     |
 
 **ScanResult Interface:**
 
