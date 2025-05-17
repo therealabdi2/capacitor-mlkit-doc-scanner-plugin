@@ -81,20 +81,6 @@ public class MlkitDocScannerPlugin extends Plugin {
         String resultFormatsOption = call.getString("resultFormats", "JPEG_PDF");
         String scannerModeOption = call.getString("scannerMode", "FULL");
 
-        int GmsResultFormats;
-        switch (resultFormatsOption.toUpperCase()) {
-            case "JPEG":
-                GmsResultFormats = GmsDocumentScannerOptions.RESULT_FORMAT_JPEG;
-                break;
-            case "PDF":
-                GmsResultFormats = GmsDocumentScannerOptions.RESULT_FORMAT_PDF;
-                break;
-            case "JPEG_PDF":
-            default:
-                GmsResultFormats = GmsDocumentScannerOptions.RESULT_FORMAT_JPEG_PDF;
-                break;
-        }
-
         int GmsScannerMode;
         switch (scannerModeOption.toUpperCase()) {
             case "BASE":
@@ -112,8 +98,24 @@ public class MlkitDocScannerPlugin extends Plugin {
         GmsDocumentScannerOptions.Builder optionsBuilder = new GmsDocumentScannerOptions.Builder()
             .setGalleryImportAllowed(galleryImportAllowed)
             .setPageLimit(pageLimit)
-            .setResultFormats(GmsResultFormats)
             .setScannerMode(GmsScannerMode);
+
+        // set result formats based on the option, calling the varargs method directly
+        switch (resultFormatsOption.toUpperCase()) {
+            case "JPEG":
+                optionsBuilder.setResultFormats(GmsDocumentScannerOptions.RESULT_FORMAT_JPEG);
+                break;
+            case "PDF":
+                optionsBuilder.setResultFormats(GmsDocumentScannerOptions.RESULT_FORMAT_PDF);
+                break;
+            case "JPEG_PDF":
+            default:
+                optionsBuilder.setResultFormats(
+                    GmsDocumentScannerOptions.RESULT_FORMAT_JPEG,
+                    GmsDocumentScannerOptions.RESULT_FORMAT_PDF
+                );
+                break;
+        }
 
         GmsDocumentScanner scanner = GmsDocumentScanning.getClient(optionsBuilder.build());
 
