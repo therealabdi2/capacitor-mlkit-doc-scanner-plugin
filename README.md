@@ -81,7 +81,7 @@ Starts the document scanning process.
 ## Usage Example
 
 ```typescript
-import { MlkitDocScanner } from 'capacitor-mlkit-doc-scanner';
+import { MlkitDocScanner } from '@capacitor-mlkit/doc-scanner';
 
 async function startScan() {
   try {
