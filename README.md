@@ -119,7 +119,7 @@ async function startScan() {
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit issues and pull requests to [https://github.com/therealabdi2/capacitor-mlkit-doc-scanner](https://github.com/therealabdi2/capacitor-mlkit-doc-scanner).
+Contributions are welcome! Please feel free to submit issues and pull requests to [https://github.com/therealabdi2/capacitor-mlkit-doc-scanner-plugin](https://github.com/therealabdi2/capacitor-mlkit-doc-scanner-plugin).
 
 ## License
 
