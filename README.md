@@ -2,6 +2,10 @@
 
 This plugin allows you to use Google's ML Kit Document Scanner in your Capacitor applications. It provides an easy way to add a document scanning feature, allowing users to scan documents and receive them as JPEG images and/or PDF files.
 
+## Demo
+
+A demo application showcasing the capabilities of this plugin can be found here: [https://github.com/therealabdi2/demo-mlkit-doc-scanner](https://github.com/therealabdi2/demo-mlkit-doc-scanner)
+
 ## Installation
 
 ```bash
