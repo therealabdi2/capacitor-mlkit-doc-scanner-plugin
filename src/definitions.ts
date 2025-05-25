@@ -29,11 +29,9 @@ export interface ScanOptions {
   resultFormats?: 'JPEG' | 'PDF' | 'JPEG_PDF';
   /**
    * The scanner mode.
-   * Can be 'FULL', 'BASE', or 'BASE_WITH_FILTER'.
-   * 'FULL': Enables auto-capture and file format selection (if multiple formats are specified).
-   * 'BASE': Disables auto-capture and file format selection. User always needs to tap capture button.
-   * 'BASE_WITH_FILTER': Enables import from gallery, but otherwise same as 'BASE'.
-   * @default 'FULL'
+   * BASE: Basic editing capabilities (crop, rotate, reorder pages, etc.).
+   * BASE_WITH_FILTER: Adds image filters (grayscale, auto image enhancement, etc.) to the BASE mode.
+   * FULL (default): Adds ML-enabled image cleaning capabilities (erase stains, fingers, etc.) to the BASE_WITH_FILTER mode. This mode will also allow future major features to be automatically added along with Google Play services updates, while the other two modes will maintain their current feature sets and only receive minor refinements.
    */
   scannerMode?: 'FULL' | 'BASE' | 'BASE_WITH_FILTER';
 }
