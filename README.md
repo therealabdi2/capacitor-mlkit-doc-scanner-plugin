@@ -37,48 +37,64 @@ npx cap sync
 
 <docgen-index>
 
-- [`scanDocument(...)`](#scandocument)
+* [`scanDocument(...)`](#scandocument)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
 <docgen-api>
-<!--Update the API documentation below after generating it with `npm run docgen`-->
+<!--Update the source file JSDoc comments and rerun docgen to update the docs below-->
 
 ### scanDocument(...)
 
 ```typescript
-scanDocument(options?: ScanOptions) => Promise<ScanResult>
+scanDocument(options?: ScanOptions | undefined) => Promise<ScanResult>
 ```
 
 Starts the document scanning process.
 
-**Parameters:**
+| Param         | Type                                                | Description                            |
+| ------------- | --------------------------------------------------- | -------------------------------------- |
+| **`options`** | <code><a href="#scanoptions">ScanOptions</a></code> | Configuration options for the scanner. |
 
-| Name      | Type          | Description                            | Optional |
-| :-------- | :------------ | :------------------------------------- | :------- |
-| `options` | `ScanOptions` | Configuration options for the scanner. | Yes      |
+**Returns:** <code>Promise&lt;<a href="#scanresult">ScanResult</a>&gt;</code>
 
-**Returns:** `Promise<ScanResult>`
+--------------------
 
----
 
-**ScanOptions Interface:**
+### Interfaces
 
-| Name                   | Type                                     | Description                                                                                                                                                                                                                                                                                                                                                    | Default      |
-| :--------------------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------- |
-| `galleryImportAllowed` | `boolean`                                | Whether to allow importing from the photo gallery.                                                                                                                                                                                                                                                                                                             | `false`      |
-| `pageLimit`            | `number`                                 | The maximum number of pages that can be scanned.                                                                                                                                                                                                                                                                                                               | `10`         |
-| `resultFormats`        | `\'JPEG\' \\| \'PDF\' \\| \'JPEG_PDF\'`          | The desired result formats.                                                                                                                                                                                                                                                                                                                                    | `\'JPEG_PDF\'` |
-| `scannerMode`          | `\'FULL\' \\| \'BASE\' \\| \'BASE_WITH_FILTER\'` | The scanner mode. <br/>`BASE`: Basic editing capabilities (crop, rotate, reorder pages, etc.). <br/>`BASE_WITH_FILTER`: Adds image filters (grayscale, auto image enhancement, etc.) to the `BASE` mode. <br/>`FULL` (default): Adds ML-enabled image cleaning capabilities (erase stains, fingers, etc.) to the `BASE_WITH_FILTER` mode. This mode will also allow future major features to be automatically added along with Google Play services updates, while the other two modes will maintain their current feature sets and only receive minor refinements. | `\'FULL\'`     |
 
-**ScanResult Interface:**
+#### ScanResult
 
-| Name            | Type       | Description                                                                                         |
-| :-------------- | :--------- | :-------------------------------------------------------------------------------------------------- |
-| `scannedImages` | `string[]` | An array of URIs for the scanned image pages (JPEG). Present if 'JPEG' or 'JPEG_PDF' was requested. |
-| `pdf`           | `object`   | Information about the generated PDF. Present if 'PDF' or 'JPEG_PDF' was requested.                  |
-| `pdf.uri`       | `string`   | The URI of the generated PDF file.                                                                  |
-| `pdf.pageCount` | `number`   | The number of pages in the PDF.                                                                     |
+Result of a document scan operation.
+
+| Prop                | Type                                        | Description                                                                                                          |
+| ------------------- | ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **`scannedImages`** | <code>string[]</code>                       | An array of URIs for the scanned image pages (JPEG). Present if 'JPEG' or 'JPEG_PDF' was requested in resultFormats. |
+| **`pdf`**           | <code><a href="#pdfinfo">PdfInfo</a></code> | Information about the generated PDF. Present if 'PDF' or 'JPEG_PDF' was requested in resultFormats.                  |
+
+
+#### PdfInfo
+
+Information about a generated PDF document.
+
+| Prop            | Type                | Description                        |
+| --------------- | ------------------- | ---------------------------------- |
+| **`uri`**       | <code>string</code> | The URI of the generated PDF file. |
+| **`pageCount`** | <code>number</code> | The number of pages in the PDF.    |
+
+
+#### ScanOptions
+
+Options for the document scanner.
+
+| Prop                       | Type                                                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Default                 |
+| -------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------- |
+| **`galleryImportAllowed`** | <code>boolean</code>                                | Whether to allow importing from the photo gallery.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | <code>false</code>      |
+| **`pageLimit`**            | <code>number</code>                                 | The maximum number of pages that can be scanned.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | <code>10</code>         |
+| **`resultFormats`**        | <code>'JPEG' \| 'PDF' \| 'JPEG_PDF'</code>          | The desired result formats. Can be 'JPEG', 'PDF', or 'JPEG_PDF'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | <code>'JPEG_PDF'</code> |
+| **`scannerMode`**          | <code>'FULL' \| 'BASE' \| 'BASE_WITH_FILTER'</code> | The scanner mode. BASE: Basic editing capabilities (crop, rotate, reorder pages, etc.). BASE_WITH_FILTER: Adds image filters (grayscale, auto image enhancement, etc.) to the BASE mode. FULL (default): Adds ML-enabled image cleaning capabilities (erase stains, fingers, etc.) to the BASE_WITH_FILTER mode. This mode will also allow future major features to be automatically added along with Google Play services updates, while the other two modes will maintain their current feature sets and only receive minor refinements. |                         |
 
 </docgen-api>
 
