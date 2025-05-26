@@ -1,4 +1,5 @@
 # Capacitor ML Kit Document Scanner Plugin
+Unofficial Capacitor plugin for [ML Kit Document Scanner](https://developers.google.com/ml-kit/vision/doc-scanner).[^1]
 
 This plugin allows you to use Google's ML Kit Document Scanner in your Capacitor applications. It provides an easy way to add a document scanning feature, allowing users to scan documents and receive them as JPEG images and/or PDF files.
 
@@ -144,3 +145,5 @@ Contributions are welcome! Please feel free to submit issues and pull requests t
 ## License
 
 This plugin is licensed under the MIT License.
+
+[^1]: This project is not affiliated with, endorsed by, sponsored by, or approved by Google LLC or any of their affiliates or subsidiaries.
