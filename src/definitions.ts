@@ -31,7 +31,8 @@ export interface ScanOptions {
    * The scanner mode.
    * BASE: Basic editing capabilities (crop, rotate, reorder pages, etc.).
    * BASE_WITH_FILTER: Adds image filters (grayscale, auto image enhancement, etc.) to the BASE mode.
-   * FULL (default): Adds ML-enabled image cleaning capabilities (erase stains, fingers, etc.) to the BASE_WITH_FILTER mode. This mode will also allow future major features to be automatically added along with Google Play services updates, while the other two modes will maintain their current feature sets and only receive minor refinements.
+   * FULL: Adds ML-enabled image cleaning capabilities (erase stains, fingers, etc.) to the BASE_WITH_FILTER mode. This mode will also allow future major features to be automatically added along with Google Play services updates, while the other two modes will maintain their current feature sets and only receive minor refinements.
+   * @default "FULL"
    */
   scannerMode?: "FULL" | "BASE" | "BASE_WITH_FILTER";
 }
